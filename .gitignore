@@ -1,0 +1,7 @@
+node_modules/
+target/
+*.log
+*.o
+*.obj
+*.wasm
+tests/output/
