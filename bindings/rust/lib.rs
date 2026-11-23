@@ -13,3 +13,17 @@ pub const LANGUAGE: LanguageFn = unsafe { LanguageFn::from_raw(tree_sitter_aveng
 
 /// The generated public node contract.
 pub const NODE_TYPES: &str = include_str!("../../src/node-types.json");
+
+/// The highlighting query, whose capture names are Zed's.
+pub const HIGHLIGHTS_QUERY: &str = include_str!("../../queries/highlights.scm");
+
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn the_language_loads_and_the_highlights_compile() {
+        let language = super::LANGUAGE.into();
+        let mut parser = tree_sitter::Parser::new();
+        parser.set_language(&language).expect("the language loads");
+        tree_sitter::Query::new(&language, super::HIGHLIGHTS_QUERY).expect("highlights.scm compiles");
+    }
+}

@@ -1,0 +1,44 @@
+Speed #value m/s and #numfmt(r2, ".2f")
+//    ^ punctuation.special
+//     ^ variable
+//                    ^ function
+//                          ^ punctuation.bracket
+//                           ^ variable
+//                             ^ punctuation.delimiter
+//                               ^ string
+//                                    ^ punctuation.bracket
+Count #if other [#value (#count)] else [#value]
+//     ^ keyword
+//        ^ variable
+//              ^ punctuation.bracket
+//                        ^ variable
+//                                ^ keyword
+At #calc.clamp(x, 0, 1.5) #f(size: 12pt, none, auto, true)
+//  ^ variable
+//      ^ punctuation.delimiter
+//       ^ function
+//                ^ number
+//                   ^ number
+//                           ^ variable.parameter
+//                               ^ punctuation.delimiter
+//                                 ^ number
+//                                       ^ constant.builtin
+//                                             ^ constant.builtin
+//                                                   ^ boolean
+To #sym.arrow.r and #(1 + x * 2 >= 3 and not y) #(a: 1, ..b)
+//  ^ variable
+//      ^ property
+//            ^ property
+//                      ^ operator
+//                          ^ operator
+//                              ^ operator
+//                                   ^ keyword
+//                                       ^ keyword
+//                                                ^ variable.parameter
+//                                                      ^ operator
+See #emph[by island] #underline(stroke: red)[a]
+//   ^ function
+//       ^ punctuation.bracket
+//                    ^ function
+//                              ^ variable.parameter
+//                                      ^ variable

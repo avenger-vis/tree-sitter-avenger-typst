@@ -1,0 +1,10 @@
+The *mass* of _Adélie_ penguins
+//  ^ punctuation.special
+//   ^ emphasis.strong
+//            ^ punctuation.special
+snake_case stays text, and `raw` is literal \# with a \ break
+//                         ^ text.literal
+//                                          ^ string.escape
+//                                                    ^ string.escape
+Revenue [USD] /* a comment */ end
+//            ^ comment

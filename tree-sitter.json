@@ -5,7 +5,10 @@
       "camelcase": "AvengerTypst",
       "scope": "source.avenger-typst",
       "path": ".",
-      "file-types": [],
+      "file-types": [
+        "avenger-typst"
+      ],
+      "highlights": "queries/highlights.scm",
       "injection-regex": "^avenger-typst$"
     }
   ],
