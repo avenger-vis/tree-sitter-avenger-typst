@@ -1,0 +1,37 @@
+[package]
+name = "tree-sitter-avenger-typst"
+description = "The Tree-sitter grammar of the Typst subset of avenger's labels"
+version = "0.1.0"
+authors = ["Jon Mease"]
+license = "MIT"
+readme = "README.md"
+keywords = ["avenger", "incremental", "parsing", "tree-sitter", "typst"]
+categories = ["parsing", "text-editors"]
+repository = "https://github.com/avenger-vis/tree-sitter-avenger-typst"
+edition = "2021"
+rust-version = "1.90"
+autoexamples = false
+build = "bindings/rust/build.rs"
+include = [
+  "/LICENSE",
+  "/README.md",
+  "/bindings/c/**",
+  "/bindings/rust/**",
+  "/grammar.js",
+  "/queries/**",
+  "/src/**",
+  "/tree-sitter.json",
+]
+
+[lib]
+path = "bindings/rust/lib.rs"
+
+[dependencies]
+tree-sitter-language = "0.1"
+
+[build-dependencies]
+cc = "1.2"
+
+[dev-dependencies]
+tree-sitter = "=0.27.2"
+typst-syntax = "=0.15.1"

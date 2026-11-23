@@ -1,0 +1,141 @@
+# The agreement corpus: each line is `ok` or `no`, a tab, and a label's markup, with `\n` for a
+# newline. `ok` is markup that labels support and `no` markup that they reject
+# (avenger-typst-label/docs/typst-support.md, whose examples these are, and the chart format's).
+#
+# Markup
+no	a\n\nb
+ok	*strong*
+ok	_emphasis_
+ok	`print(1)`
+no	```py print(1)```
+no	`one\ntwo`
+no	https://typst.app/
+no	<intro>
+no	@intro
+no	= Heading
+no	- item
+no	+ item
+no	/ Term: description
+ok	$x^2$
+ok	a \ b
+ok	'single' or "double"
+ok	a~b
+ok	a---b
+ok	#rect(width: 1cm)
+ok	Tweet at us \#ad
+ok	a \u{1F600} b
+ok	a /* block */ b
+ok	a // line
+ok	snake_case and a*b*c
+ok	*Penguins* by _island_
+ok	*a _b *c* d_ e*
+ok	Revenue [USD]
+ok	Mass (g) — 2007–2009
+ok	#value m/s
+ok	#value.
+ok	#if null [Unknown] else [#value]
+ok	#if other [#value (#count)] else [#value]
+ok	*Fit* $R^2 = #numfmt(r2, ".2f")$
+ok	#emph[by island] #upper("mass") 2.5
+ok	#underline(stroke: red)[a]
+ok	#f(x) [not a trailing block]
+ok	#sym.arrow.r and #calc.clamp(x, 0, 1)
+ok	#datetimefmt(d, "[year]")
+ok	£ 1,234 · 50%
+ok	中文*字*
+# Math
+ok	$x^2$
+no	$ x^2 $
+ok	$x_1$
+ok	$1 + (a+b)/5$
+no	$x \ y$
+no	$x &= 2 \ &= 3$
+ok	$#x$ and $pi$
+ok	$arrow.r.long$
+ok	$x y$
+ok	$a -> b != c$
+ok	$a "is natural"$
+ok	$floor(x)$
+ok	$#rect(width: 1cm)$
+ok	$x\^2$
+ok	$/* comment */ x$
+ok	$sum_(i=1)^n x_i$
+ok	$f'(x) = 2x$
+ok	$[0, 1)$
+ok	$cancel(x, angle: 30deg)$
+no	$mat(1, 2; 3, 4)$
+ok	$a < b <= c$
+ok	$n!$
+# Code
+ok	#none
+ok	#auto
+ok	#f(false, true)
+ok	#f(10, 0xff)
+ok	#f(3.14, 1e5)
+ok	#f(2pt, 3mm, 1em)
+ok	#f(90deg, 1rad)
+ok	#f(50%)
+ok	#"hello"
+no	#<intro>
+ok	#x
+ok	#{ 1 + 2 }
+no	#{ let x = 1; x + 2 }
+ok	#[*Hello*]
+ok	#(1 + 2)
+ok	#f((1, 2, 3))
+ok	#f(features: ("smcp",))
+ok	#f((a: "hi", b: 2))
+ok	#(-x)
+ok	#(x + y)
+no	#{ x = 1 }
+ok	#x.y
+ok	#min(x, y)
+ok	#min(..nums)
+no	#((x, y) => x + y)
+no	#let x = 1
+no	#let f(x) = 2 * x
+no	#set text(14pt)
+no	#show heading: set block()
+no	#show: template
+no	#context text.lang
+ok	#if x == 1 [a] else [b]
+ok	#if x == 1 { 1 } else if x == 2 { 2 } else { 3 }
+no	#for x in (1, 2, 3) [#x]
+no	#while x < 10 [a]
+no	#{ break }
+no	#return x
+no	#include "bar.typ"
+no	#import "bar.typ": a, b, c
+ok	#(x in (1, 2) and not y or z)
+ok	#(1 + 2 * 3 - 4 / 5 >= 6)
+# Edges
+ok	*unclosed
+ok	_unclosed
+ok	#
+ok	# x
+ok	#value-1 and a-b and --
+ok	a$b$c and $a$b
+ok	#f[a][b]
+ok	#x.y(1)
+ok	#(1pt + 2em).em
+ok	#"unclosed
+ok	$unclosed
+ok	#emph[unclosed
+ok	`unclosed
+ok	\u{110000}
+ok	a /* nested /* comment */ still */ b
+ok	x*y and *x*y and a_b_c and _a_b
+ok	日本語_テスト_
+ok	$#[*x*] + #value$
+ok	$x_(a)^(b) + x^2' + sqrt(x) + "a" + b$
+ok	$f(x; y)$
+ok	#{1\n2}
+ok	#{a -b}
+ok	#if a [b]\nelse [c]
+ok	#f("a\"b", "\u{41}")
+ok	#(a: 1, ..b)
+ok	#(..a, b: 1)
+ok	#( )
+ok	#(:)
+ok	#((1, 2).len())
+ok	The *mass* of _Adélie_ penguins, in $"g"$ — #value
