@@ -1,0 +1,32 @@
+{
+  "grammars": [
+    {
+      "name": "avenger_typst",
+      "camelcase": "AvengerTypst",
+      "scope": "source.avenger-typst",
+      "path": ".",
+      "file-types": [
+        "avenger-typst"
+      ],
+      "highlights": "queries/highlights.scm",
+      "injection-regex": "^avenger-typst$"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "The Tree-sitter grammar of the Typst subset of avenger's labels",
+    "authors": [
+      {
+        "name": "Jon Mease"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/avenger-vis/tree-sitter-avenger-typst"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "rust": true
+  }
+}

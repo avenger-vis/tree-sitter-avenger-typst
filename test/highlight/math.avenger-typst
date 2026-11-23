@@ -1,0 +1,22 @@
+Fit $R^2 = sum_(i=1)^n x_i'$
+//  ^ punctuation.special
+//   ^ variable
+//    ^ operator
+//     ^ number
+//         ^ variable
+//             ^ punctuation.bracket
+//                   ^ variable
+//                        ^ operator
+To $arrow.r.long$ and $floor(x) -> (a+b)/5$
+//  ^ variable
+//       ^ punctuation.delimiter
+//        ^ constant
+//          ^ constant
+//                     ^ function
+//                              ^ operator
+//                                      ^ operator
+//                                       ^ number
+In $#value + "text"$
+//  ^ punctuation.special
+//   ^ variable
+//           ^ string
